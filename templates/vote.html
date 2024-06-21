@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oy Ver</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mt-5">
+                <h2 class="text-center">Oy Ver</h2>
+                <form method="POST" class="text-center">
+                    <div class="form-group">
+                        <label for="aday_id">Aday Seçin</label>
+                        <select class="form-control" id="aday_id" name="aday_id">
+                            {% for aday_id, aday in adaylar.items() %}
+                            <option value="{{ aday_id }}">{{ aday.isim }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Oy Ver</button>
+                </form>
+                <!-- Oy verme işlemi sonrası uyarı -->
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="alert alert-{{ messages[0].split(':')[0] }} mt-3" role="alert">
+                            <p>{{ messages[0].split(':')[1] }}</p>
+                        </div>
+                    {% endif %}
+                {% endwith %}
+                <!-- Oy verme işlemi sonrası uyarı -->
+                <!-- Anasayfaya dön butonu -->
+                <div class="text-center mt-3">
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary">Anasayfaya Dön</a>
+                </div>
+                <!-- Anasayfaya dön butonu -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

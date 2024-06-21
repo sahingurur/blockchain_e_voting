@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blokzincir Oy Sistemi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Görsel için düzenleme */
+        .btn-img {
+            width: 20px; /* Genişlik */
+            height: auto; /* Yükseklik otomatik olarak ayarlanır */
+            margin-right: 8px; /* Görsel ile metin arasındaki boşluk */
+            pointer-events: none; /* Görselin tıklanabilirliğini kaldırır */
+            cursor: default; /* Görsel üzerine gelindiğinde cursor'ı default yapar */
+        }
+
+        /* Metin için düzenleme */
+        .btn-text {
+            pointer-events: auto; /* Metnin tıklanabilirliğini etkinleştirir */
+            cursor: pointer; /* Metin üzerine gelindiğinde cursor'ı pointer yapar */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center mt-5">
+                <h1>Blokzincir Oy Sistemi</h1>
+                <a href="{{ url_for('user_login') }}" class="btn btn-primary mt-3">
+                    <img src="static/images/user.png" alt="Kullanıcı Girişi" class="btn-img">
+                    <span class="btn-text">Kullanıcı Girişi</span>
+                </a>
+                <a href="{{ url_for('admin_login') }}" class="btn btn-secondary mt-3">
+                    <img src="static/images/admin.png" alt="Admin Girişi" class="btn-img">
+                    <span class="btn-text">Admin Girişi</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

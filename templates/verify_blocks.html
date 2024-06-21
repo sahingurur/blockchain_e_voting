@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blok Doğrulama</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-5">
+                <h2 class="text-center">Blok Doğrulama</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Blok Numarası</th>
+                            <th>Doğrulama Durumu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for blok_no, status in valid_blocks %}
+                        <tr>
+                            <td>{{ blok_no }}</td>
+                            <td>{{ "Geçerli" if status else "Geçersiz" }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <!-- Anasayfaya dön butonu -->
+                <div class="text-center mt-3">
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary">Anasayfaya Dön</a>
+                </div>
+                <!-- Anasayfaya dön butonu -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

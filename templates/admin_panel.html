@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 mt-5">
+                <h2 class="text-center">Admin Paneli</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="/results">Oy Sonuçları</a></li>
+                    <li class="list-group-item"><a href="/merkle_roots">Merkle Kökleri</a></li>
+                    <li class="list-group-item"><a href="/verify_blocks">Blok Doğrulama</a></li>
+                    <li class="list-group-item"><a href="/admin_results">Admin Oy Sonuçları</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Anasayfaya dön butonu -->
+        <div class="row">
+            <div class="col-12 text-center mt-3">
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">Anasayfaya Dön</a>
+            </div>
+        </div>
+        <!-- Anasayfaya dön butonu -->
+    </div>
+</body>
+</html>
